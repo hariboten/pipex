@@ -2,7 +2,7 @@
 
 void	vlst_clear(char **vlst)
 {
-	char **iter;
+	char	**iter;
 
 	iter = vlst;
 	while (*iter != NULL)

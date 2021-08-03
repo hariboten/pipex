@@ -37,7 +37,7 @@ pid_t	launch_command(const t_com *com, int oppsize_pipe)
 	exit(px_error(ERR_VAL));
 }
 
-int		open_fds(const t_px *px, t_com *com1, t_com *com2)
+int	open_fds(const t_px *px, t_com *com1, t_com *com2)
 {
 	int		pipe_fd[2];
 	int		ret;
@@ -56,7 +56,7 @@ int		open_fds(const t_px *px, t_com *com1, t_com *com2)
 	return (0);
 }
 
-int		wait_for_child_procs(pid_t pid1, pid_t pid2)
+int	wait_for_child_procs(pid_t pid1, pid_t pid2)
 {
 	int		ret;
 	int		status;
@@ -70,7 +70,7 @@ int		wait_for_child_procs(pid_t pid1, pid_t pid2)
 	return (0);
 }
 
-int		pipex(t_px *px)
+int	pipex(t_px *px)
 {
 	pid_t	pid1;
 	pid_t	pid2;

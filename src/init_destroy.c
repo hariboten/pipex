@@ -1,6 +1,6 @@
 #include <pipex.h>
 
-int		set_param_com(t_com *com, const char *comstr, char **envp)
+int	set_param_com(t_com *com, const char *comstr, char **envp)
 {
 	com->envp = envp;
 	com->argv = ft_split(comstr, SPLIT_SEP);
@@ -28,7 +28,7 @@ void	destroy_com(t_com *com)
 	vlst_clear(com->argv);
 }
 
-int		px_init(t_px *px, int argc, char **argv, char **envp)
+int	px_init(t_px *px, int argc, char **argv, char **envp)
 {
 	int		ret;
 
