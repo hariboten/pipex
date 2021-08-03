@@ -12,7 +12,7 @@ void	close_unuse_fd(t_px *px)
 	px->com2.fdout = -1;
 }
 
-pid_t	launch_command(const t_com *com, int closefd)
+pid_t	launch_command(const t_com *com, int oppsize_pipe)
 {
 	pid_t	pid;
 	int		ret;
@@ -32,7 +32,7 @@ pid_t	launch_command(const t_com *com, int closefd)
 		exit(px_error(ERR_VAL));
 	close(com->fdin);
 	close(com->fdout);
-	close(closefd);
+	close(oppsize_pipe);
 	ret = exec_com(com);
 	exit(px_error(ERR_VAL));
 }
