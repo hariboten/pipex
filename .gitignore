@@ -1,0 +1,5 @@
+.clangd/
+infile
+outfile
+obj/
+pipex
