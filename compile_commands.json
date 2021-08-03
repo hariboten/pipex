@@ -1,0 +1,22 @@
+[
+ {
+  "directory": "/home/eisaku/Document/42tokyo/pipex",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "./include/",
+   "-I",
+   "./libft/",
+   "-g",
+   "-O0",
+   "-c",
+   "-o",
+   "obj/main.o",
+   "src/main.c"
+  ],
+  "file": "src/main.c"
+ }
+]

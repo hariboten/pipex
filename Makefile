@@ -10,24 +10,30 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =
+NAME = pipex
 SRCDIR = ./src/
-SRCNAMES = \
+SRCNAMES = main.c \
+		   pipex.c \
+		   px_exec.c \
+		   init_destroy.c \
+		   px_error.c \
+		   px_utils.c
 SRCS = $(addprefix $(SRCDIR), $(SRCNAMES))
 OBJDIR = ./obj/
 OBJS = $(SRCNAMES:%.c=$(OBJDIR)%.o)
 INCLUDEDIR = ./include/
 
-#LIBFTDIR = ./libft/
-#LIBFT = libft.a
+LIBFTDIR = ./libft/
+LIBFT = libft.a
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I $(INCLUDEDIR) # -g -O0
+CFLAGS = -Wall -Werror -Wextra -I $(INCLUDEDIR) -I $(LIBFTDIR) -g -O0
 
 all : $(OBJDIR) $(NAME)
 
-$(NAME) : $(OBJS) # (LIBFT)
-	$(CC) $(CFLAGS) -o $@ $^ # -L $(LIBFTDIR) -lft
+$(NAME) : $(OBJS)
+	make -C $(LIBFTDIR)
+	$(CC) $(CFLAGS) -o $@ $^ -L $(LIBFTDIR) -lft
 
 $(OBJDIR) :
 	mkdir -p $@
@@ -35,16 +41,13 @@ $(OBJDIR) :
 $(OBJDIR)%.o : $(SRCDIR)%.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-#(LIBFT)
-#	make -C $(LIBFTDIR)
-
 clean :
 	rm -f $(OBJS)
-#	make clean -C $(LIBFTDIR)
+	make clean -C $(LIBFTDIR)
 
 fclean : clean
 	rm -f $(NAME)
-#	make fclean -C $(LIBFTDIR)
+	make fclean -C $(LIBFTDIR)
 
 re : fclean all
 
