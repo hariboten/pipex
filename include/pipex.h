@@ -17,9 +17,9 @@
 # define MSG_INVARGNUM "pipex: invalid number of arguments"
 # define MSG_FAILALLOC "pipex: failed to allocate memory"
 
-typedef struct s_px t_px;
-typedef struct s_com t_com;
-typedef	enum e_err t_err;
+typedef struct s_px		t_px;
+typedef struct s_com	t_com;
+typedef enum e_err		t_err;
 
 struct s_com
 {
